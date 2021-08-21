@@ -34,7 +34,7 @@ function updateDeliveryCost(deliveryType){
 	updateTotal();
 }
 
-//Update Total
+//Update Total Price
 function updateTotal(){
 	const basePrice = 1299;
 	let memoryCost = parseInt (document.getElementById('extra-memory').innerText );
@@ -43,12 +43,14 @@ function updateTotal(){
 
 	const totalPrice = memoryCost + storageCost + deliveryCost + basePrice ;
 
+	//Set Total Price
 	document.getElementById('total-cost').innerText = totalPrice;
 	document.getElementById('grand-total').innerText = totalPrice;
 }
 
-//Update Grand Total
+//Update On Coupon Apply
 function applyCoupon(){
+	//Getting Total Cost
 	const totalPrice = parseInt(document.getElementById('total-cost').innerText);
 
     // Getting input value
@@ -57,7 +59,7 @@ function applyCoupon(){
     // Clearing input field
     document.getElementById('promo-field').value = "";
 
-    // promo code check
+    // Promo Code Check
     if (promoText == "stevekaku") {
         const priceAfterPromo = totalPrice - totalPrice / 5;
         document.getElementById('grand-total').innerText = parseFloat(priceAfterPromo);
