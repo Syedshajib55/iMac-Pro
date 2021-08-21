@@ -1,35 +1,38 @@
 //Memory Cost
 function updateMemoryCost(memory){
+	const extraMemory = document.getElementById('extra-memory');
 	if(memory == 16){
-		document.getElementById('extra-memory').innerText = 180;
+		extraMemory.innerText = 180;
 	}
 	else{
-		document.getElementById('extra-memory').innerText = 0;
+		extraMemory.innerText = 0;
 	}
 	updateTotal();
 }
 
 //Storage Cost
 function updateStorageCost(storage){
+	const extraStorage = document.getElementById('extra-storage');
 	if(storage == 256){
-		document.getElementById('extra-storage').innerText = 0;
+		extraStorage.innerText = 0;
 	}
 	else if(storage == 512){
-		document.getElementById('extra-storage').innerText = 100;
+		extraStorage.innerText = 100;
 	}
 	else{
-		document.getElementById('extra-storage').innerText = 180;
+		extraStorage.innerText = 180;
 	}
 	updateTotal();
 }
 
 //Delivery Cost
 function updateDeliveryCost(deliveryType){
+	const deliveryCost = document.getElementById('delivery-cost');
 	if(deliveryType == 'normal'){
-		document.getElementById('delivery-cost').innerText = 0;
+		deliveryCost.innerText = 0;
 	}
 	else {
-		document.getElementById('delivery-cost').innerText = 20;
+		deliveryCost.innerText = 20;
 	}
 	updateTotal();
 }
@@ -37,7 +40,7 @@ function updateDeliveryCost(deliveryType){
 //Update Total Price
 function updateTotal(){
 	const basePrice = 1299;
-	let memoryCost = parseInt (document.getElementById('extra-memory').innerText );
+	let memoryCost =  parseInt (document.getElementById('extra-memory').innerText );
 	let storageCost = parseInt(document.getElementById('extra-storage').innerText);
 	let deliveryCost = parseInt(document.getElementById('delivery-cost').innerText);
 
